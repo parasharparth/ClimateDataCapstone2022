@@ -245,6 +245,7 @@ class graphPage(tk.Frame):
         self.save_state_export_button = None
         self.save_state_import_df = None
         self.save_state_import_button = None
+        self.graph = None
 
 #3/6: txt and table import
         self.table_export_df = None
@@ -447,6 +448,7 @@ class graphPage(tk.Frame):
                                                                             double_plot_diff <= 0 else double_plot_diff))
 
                 # Export CSV Button
+                self.graph = image_graph
                 self.export_csv_button = TTK.Button(self.tab, command=save_csv_file, width="19", text="Export data to CSV", bootstyle="blue")
                 self.export_csv_button.grid(row=9, column=1, padx=(250,0), pady=(0, 0))
 
@@ -1019,6 +1021,18 @@ class graphPage(tk.Frame):
                 file_name = asksaveasfilename(filetypes=[("CSV files", "*.csv")],
                                               defaultextension='.csv')
                 exportdf.to_csv(file_name, sep=',', encoding='utf-8', index=False)
+                
+                # Export Graph to PNG format
+                if self.graph is None:
+                    print('There is no graph to export')
+                else:
+                    file_name = file_name[:-4]
+                    graph_file = file_name + '.png'
+                    fig = self.graph.figure
+                    fig.savefig(graph_file)
+
+
+
 
         frame = ttk.Notebook(self, width=x_max, height=y_max)  # again its the notebook that needs to fill
         frame.pack(fill='both', pady=10, expand=True)
