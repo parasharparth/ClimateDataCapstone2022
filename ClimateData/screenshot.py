@@ -16,3 +16,4 @@ screenshot = ImageGrab.grab(bbox=(x, y, x+width, y+height))
 
 # Save the screenshot as a file
 screenshot.save("save-screenshot.png")
+
