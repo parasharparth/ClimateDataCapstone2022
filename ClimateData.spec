@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['C:/Users/vivek/OneDrive/Desktop/capstone/ClimateDataCapstone2022/ClimateData/cli.py'],
+    ['ClimateData'],
     pathex=[],
     binaries=[],
     datas=[],

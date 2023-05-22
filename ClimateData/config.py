@@ -12,7 +12,7 @@ _config_default = {
     "Host": "localhost",
     "Name": "postgres",
     "User": "postgres",
-    "Password": "PASSWORD",
+    "Password": "Ocas@2210",
     "LastUpdated": None
   }
 }
